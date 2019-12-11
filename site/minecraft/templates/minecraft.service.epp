@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=<%= $mc_dir %>
-ExecStart=/usr/bin/java -Xmx256M -Xms64M -jar server.jar nogui
+ExecStart=/usr/bin/java -Xmx512M -Xms64M -jar server.jar nogui
 
 [Install]
 WantedBy=multi-user.target
