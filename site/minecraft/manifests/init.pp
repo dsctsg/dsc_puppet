@@ -25,7 +25,11 @@ class minecraft (
   
   file { '/etc/systemd/system/minecraft.service':
     ensure => file,
-    source => 'puppet:///modules/minecraft/minecraft.service',
+    #source => 'puppet:///modules/minecraft/minecraft.service',
+    # syntax: epp('class_name/template_name',{ arguments_if_any }),
+    content => epp('minecraft/minecraft.service', {
+      mc_dir => ${mc_dir},
+    }),
     # changes trigger notify
   }
   
