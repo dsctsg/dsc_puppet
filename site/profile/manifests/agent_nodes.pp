@@ -3,7 +3,7 @@ class profile::agent_nodes {
   # docker nodes
   dockeragent::node {'web.puppet.vm':}
   dockeragent::node {'db.puppet.vm':}
-  #dockeragent::node {'minecraft.puppet.vm':}
+  # dockeragent::node {'minecraft.puppet.vm':}
   dockeragent::node {'clamav.puppet.vm':}
 
   # ssh nodes
