@@ -1,8 +1,3 @@
-class clamav () {
-  $packages = ['clamav', 'clamav-data']
-  
-  package { $packages:
-    ensure => present,
-  }
-  
+class profile::clamav {
+  include clamav
 }
