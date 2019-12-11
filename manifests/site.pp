@@ -6,8 +6,9 @@ node 'master.puppet.vm' {
   include role::master_server
 }
 
-node 'minecraft.puppet.vm' {
-  include role::minecraft_server
+#node 'minecraft.puppet.vm' {
+node 'clamav.puppet.vm' {
+  include role::clamav_server
 }
 
 node /^web/ {
