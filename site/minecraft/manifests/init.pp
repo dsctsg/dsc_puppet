@@ -28,7 +28,7 @@ class minecraft (
     #source => 'puppet:///modules/minecraft/minecraft.service',
     # syntax: epp('class_name/template_name',{ arguments_if_any }),
     content => epp('minecraft/minecraft.service', {
-      mc_dir => ${mc_dir},
+      mc_dir => $mc_dir,
     }),
     # changes trigger notify
   }
