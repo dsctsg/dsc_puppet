@@ -28,6 +28,7 @@ class minecraft (
     #source => 'puppet:///modules/minecraft/minecraft.service',
     # syntax: epp('class_name/template_name',{ arguments_if_any }),
     content => epp('minecraft/minecraft.service', {
+      # ${mc_dir} caused error
       mc_dir => $mc_dir,
     }),
     # changes trigger notify
@@ -37,6 +38,8 @@ class minecraft (
     ensure  => running,
     enable  => true,
     # enforcing order
-    require => [Package['java'],File["${mc_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service']],
+    require => [Package['java'],
+      File["${mc_dir}/eula.txt"],
+      File['/etc/systemd/system/minecraft.service']],
   }
 }
