@@ -3,7 +3,8 @@ class profile::agent_nodes {
   # docker nodes
   dockeragent::node {'web.puppet.vm':}
   dockeragent::node {'db.puppet.vm':}
-  dockeragent::node {'minecraft.puppet.vm':}
+  #dockeragent::node {'minecraft.puppet.vm':}
+  dockeragent::node {'clamav.puppet.vm':}
 
   # ssh nodes
   host { 'web.puppet.vm':
@@ -14,7 +15,11 @@ class profile::agent_nodes {
     ensure => present,
     ip     => '172.18.0.3',
   }
-  host { 'minecraft.puppet.vm':
+  #host { 'minecraft.puppet.vm':
+  #  ensure => present,
+  #  ip     => '172.18.0.4',
+  #}
+  host { 'clamav.puppet.vm':
     ensure => present,
     ip     => '172.18.0.4',
   }
