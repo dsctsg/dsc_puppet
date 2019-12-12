@@ -21,6 +21,6 @@ class profile::agent_nodes {
   #}
   host { 'clamav.puppet.vm':
     ensure => present,
-    ip     => '172.18.0.4',
+    ip     => '172.18.0.5',
   }
 }
